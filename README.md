@@ -76,6 +76,19 @@ rm -rf ~/.local/share/gnome-shell/extensions/eve-gnome-bright@eve
 
 Reboot to finish.
 
+## Changelog
+
+### v1.0.1
+
+- **Fix:** overlay no longer blocks drag-and-drop between workspaces
+- **Fix:** replace removed `overlayGroup` API with `uiGroup` for GNOME 50
+- **Add:** `monitors-changed` listener — overlay resizes on hotplug
+- **Meta:** corrected metadata version
+
+### v1.0.0
+
+- Initial release
+
 ## Tested on
 
 - Fedora Workstation · GNOME Shell 50 · Wayland
