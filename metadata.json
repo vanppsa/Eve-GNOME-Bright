@@ -1,0 +1,10 @@
+{
+    "uuid": "eve-gnome-bright@eve",
+    "name": "Eve GNOME Bright",
+    "description": "Quick brightness control in the GNOME top panel, with a configurable minimum floor to avoid an unusable dim screen.",
+    "shell-version": ["50"],
+    "settings-schema": "org.gnome.shell.extensions.eve-gnome-bright",
+    "prefs": "prefs.js",
+    "stylesheet": "stylesheet.css",
+    "version": 2
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="eve-gnome-bright">
+  <schema id="org.gnome.shell.extensions.eve-gnome-bright" path="/org/gnome/shell/extensions/eve-gnome-bright/">
+  <key name="min-brightness" type="i">
+    <default>20</default>
+    <range min="0" max="100"/>
+    <summary>Minimum brightness floor</summary>
+    <description>Lower bound of the brightness slider. The screen will never dim below this value.</description>
+  </key>
+  <key name="min-input" type="i">
+    <default>0</default>
+    <range min="0" max="100"/>
+    <summary>Input field minimum</summary>
+    <description>Lower bound of the "Brightness floor (%)" field in the extension manager.</description>
+  </key>
+  <key name="max-input" type="i">
+    <default>100</default>
+    <range min="0" max="100"/>
+    <summary>Input field maximum</summary>
+    <description>Upper bound of the "Brightness floor (%)" field in the extension manager.</description>
+  </key>
+  <key name="brightness" type="d">
+    <default>80</default>
+    <range min="0" max="100"/>
+    <summary>Current brightness</summary>
+    <description>Current brightness value in percent. Persisted across sessions.</description>
+  </key>
+  <key name="enabled" type="b">
+    <default>true</default>
+    <summary>Toggle state</summary>
+    <description>Whether the brightness control is currently active.</description>
+  </key>
+  </schema>
+</schemalist>
