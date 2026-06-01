@@ -11,6 +11,9 @@ A brightness slider in the GNOME Quick Settings panel. Uses a transparent black 
 - Configurable floor: slider never goes below X%
 - Brightness persists across sessions
 
+<img width="416" height="188" alt="Image" src="https://github.com/user-attachments/assets/c51bd7bd-86f7-48d8-bd0c-6089c46a0508" />
+<img width="631" height="319" alt="Image" src="https://github.com/user-attachments/assets/ece2a6a2-9843-4cca-90ba-4d39e4629330" />
+
 ## Requirements
 
 - GNOME Shell 50
