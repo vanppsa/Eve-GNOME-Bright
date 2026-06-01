@@ -22,7 +22,7 @@ class Overlay {
         Main.layoutManager.uiGroup.add_child(this._actor);
         Main.layoutManager.uiGroup.set_child_below_sibling(this._actor, Main.layoutManager.modalDialogGroup);
 
-        this._monitorsChangedId = global.display.connect('monitors-changed', () => {
+        this._monitorsChangedId = global.backend.get_monitor_manager().connect('monitors-changed', () => {
             this._actor.set_width(global.stage.get_width());
             this._actor.set_height(global.stage.get_height());
         });
@@ -35,7 +35,7 @@ class Overlay {
 
     destroy() {
         if (this._monitorsChangedId) {
-            global.display.disconnect(this._monitorsChangedId);
+            global.backend.get_monitor_manager().disconnect(this._monitorsChangedId);
             this._monitorsChangedId = null;
         }
         if (this._actor) {
