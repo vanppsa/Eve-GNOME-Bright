@@ -6,5 +6,5 @@
     "settings-schema": "org.gnome.shell.extensions.eve-gnome-bright",
     "prefs": "prefs.js",
     "stylesheet": "stylesheet.css",
-    "version": 2
+    "version": 1
 }
