@@ -1,4 +1,5 @@
 import St from 'gi://St';
+import Shell from 'gi://Shell';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as QuickSettings from 'resource:///org/gnome/shell/ui/quickSettings.js';
 import {Slider} from 'resource:///org/gnome/shell/ui/slider.js';
@@ -17,7 +18,14 @@ class Overlay {
             reactive: false,
             opacity: 0,
         });
-        Main.uiGroup.add_child(this._actor);
+        Shell.util_set_hidden_from_pick(this._actor, true);
+        Main.layoutManager.uiGroup.add_child(this._actor);
+        Main.layoutManager.uiGroup.set_child_below_sibling(this._actor, Main.layoutManager.modalDialogGroup);
+
+        this._monitorsChangedId = global.display.connect('monitors-changed', () => {
+            this._actor.set_width(global.stage.get_width());
+            this._actor.set_height(global.stage.get_height());
+        });
     }
 
     setBrightness(value) {
@@ -26,8 +34,12 @@ class Overlay {
     }
 
     destroy() {
+        if (this._monitorsChangedId) {
+            global.display.disconnect(this._monitorsChangedId);
+            this._monitorsChangedId = null;
+        }
         if (this._actor) {
-            Main.uiGroup.remove_child(this._actor);
+            this._actor.get_parent()?.remove_child(this._actor);
             this._actor.destroy();
             this._actor = null;
         }
